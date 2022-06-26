@@ -11,21 +11,50 @@ var totalCharacters = []
 // allow variable value to be chosen by prompt
 let pwdLength = prompt("Enter desired password length between 8-128 characters")
 
-//function to confirm lower case letters
-function confirmLC() {
-    let lcYN = confirm("Should password contain lower case letters?")}
-// if statement to log lcYN input
-if (lcYN===true) {
-    //log answer, add lowerCase to new array, move onto uppercase letter confirmation
-    console.log(lcYN),
-    //add lowerCase to custom array,
-    totalCharacters.push.apply(totalCharacters, lowerCase),
-    console.log(totalCharacters), 
-    confirmUC();
+//function to select random numbers out of array
+function lottery(arr, num) {
+    const shuffled = [...arr].sort(() => 0.5 - Math.random());
+  
+    return shuffled.slice(0, num);
+  }
+    //select the desired amount out of the array//
+const arr = totalCharacters
+console.log(lottery(arr, pwdLength));
+
+
+
+//function to confirm special characters
+function confirmChar() {
+    let charYN = confirm("Should password contain special characters?")}
+// if statement to log numYN input
+if (charYN===true) {
+    //log answer, add spec char to new array, move onto selecting random elements from custom array
+    console.log(charYN),
+    //add special characters to custom array,
+    totalCharacters.push.apply(totalCharacters, specialChar),
+    console.log(totalCharacters); 
+    //select random elements from customn array
 } else {
-    //if false than console.log and move on to uppercase confirmation
-    console.log(lcYN),
-    confirmUC();
+    //if false than console.log and move on to selecting random elements from custom array
+    console.log(charYN);
+    //select random elements from custom array
+}
+
+//function to confirm numbers
+function confirmNum() {
+    let numYN = confirm("Should password contain numbers?")}
+// if statement to log numYN input
+if (numYN===true) {
+    //log answer, add numbers to new array, move onto special character confirmation
+    console.log(numYN),
+    //add numbers to custom array,
+    totalCharacters.push.apply(totalCharacters, numbers),
+    console.log(totalCharacters), 
+    confirmChar();
+} else {
+    //if false than console.log and move on to special character confirmation
+    console.log(numYN),
+    confirmChar();
 } 
 
 //function to confirm upper case letters
@@ -45,14 +74,29 @@ if (ucYN===true) {
     confirmNum();
 } 
 
-
+//function to confirm lower case letters
+function confirmLC() {
+    let lcYN = confirm("Should password contain lower case letters?")}
+// if statement to log lcYN input
+if (lcYN===true) {
+    //log answer, add lowerCase to new array, move onto uppercase letter confirmation
+    console.log(lcYN),
+    //add lowerCase to custom array,
+    totalCharacters.push.apply(totalCharacters, lowerCase),
+    console.log(totalCharacters), 
+    confirmUC();
+} else {
+    //if false than console.log and move on to uppercase confirmation
+    console.log(lcYN),
+    confirmUC();
+} 
 
 
 // function to obtain correct amount of characters
 // function queryPwdLength() {
     if (pwdLength >= 8 && pwdLength <= 128) {
-        console.log(pwdLength),
-        confirmLC();
+        console.log(pwdLength,
+        confirmLC());
     } else if (isNaN(pwdLength)){
         console.log("Silly Goose, That's Not a Number")
     } else if (pwdLength == null){
