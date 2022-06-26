@@ -14,98 +14,101 @@ let pwdLength = prompt("Enter desired password length between 8-128 characters")
 //function to select random numbers out of array
 function lottery(arr, num) {
     const shuffled = [...arr].sort(() => 0.5 - Math.random());
-  
+
     return shuffled.slice(0, num);
-  }
-    //select the desired amount out of the array//
+}
+//select the desired amount out of the array//
 const arr = totalCharacters
-console.log(lottery(arr, pwdLength));
+
 
 
 
 //function to confirm special characters
 function confirmChar() {
-    let charYN = confirm("Should password contain special characters?")}
+    let charYN = confirm("Should password contain special characters?")
 // if statement to log numYN input
-if (charYN===true) {
+if (charYN === true) {
     //log answer, add spec char to new array, move onto selecting random elements from custom array
     console.log(charYN),
-    //add special characters to custom array,
-    totalCharacters.push.apply(totalCharacters, specialChar),
-    console.log(totalCharacters); 
+        //add special characters to custom array,
+        totalCharacters.push.apply(totalCharacters, specialChar),
+        console.log(totalCharacters);
     //select random elements from customn array
 } else {
     //if false than console.log and move on to selecting random elements from custom array
     console.log(charYN);
     //select random elements from custom array
+}console.log(lottery(arr, pwdLength));
 }
-
 //function to confirm numbers
 function confirmNum() {
-    let numYN = confirm("Should password contain numbers?")}
+    let numYN = confirm("Should password contain numbers?")
+
 // if statement to log numYN input
-if (numYN===true) {
+if (numYN === true) {
     //log answer, add numbers to new array, move onto special character confirmation
     console.log(numYN),
-    //add numbers to custom array,
-    totalCharacters.push.apply(totalCharacters, numbers),
-    console.log(totalCharacters), 
-    confirmChar();
+        //add numbers to custom array,
+        totalCharacters.push.apply(totalCharacters, numbers),
+        console.log(totalCharacters),
+        confirmChar();
 } else {
     //if false than console.log and move on to special character confirmation
     console.log(numYN),
-    confirmChar();
-} 
-
+        confirmChar();
+}
+}
 //function to confirm upper case letters
 function confirmUC() {
-    let ucYN = confirm("Should password contain upper case letters?")}
+    let ucYN = confirm("Should password contain upper case letters?")
+
 // if statement to log ucYN input
-if (ucYN===true) {
+if (ucYN === true) {
     //log answer, add upperCase to new array, move onto number confirmation
     console.log(ucYN),
-    //add upperCase to custom array,
-    totalCharacters.push.apply(totalCharacters, upperCase),
-    console.log(totalCharacters), 
-    confirmNum();
+        //add upperCase to custom array,
+        totalCharacters.push.apply(totalCharacters, upperCase),
+        console.log(totalCharacters),
+        confirmNum();
 } else {
     //if false than console.log and move on to number confirmation
     console.log(ucYN),
-    confirmNum();
-} 
-
+        confirmNum();
+}
+}
 //function to confirm lower case letters
 function confirmLC() {
-    let lcYN = confirm("Should password contain lower case letters?")}
+    let lcYN = confirm("Should password contain lower case letters?")
+
 // if statement to log lcYN input
-if (lcYN===true) {
+if (lcYN === true) {
     //log answer, add lowerCase to new array, move onto uppercase letter confirmation
     console.log(lcYN),
-    //add lowerCase to custom array,
-    totalCharacters.push.apply(totalCharacters, lowerCase),
-    console.log(totalCharacters), 
-    confirmUC();
+        //add lowerCase to custom array,
+        totalCharacters.push.apply(totalCharacters, lowerCase),
+        console.log(totalCharacters),
+        confirmUC();
 } else {
     //if false than console.log and move on to uppercase confirmation
     console.log(lcYN),
-    confirmUC();
-} 
-
+        confirmUC();
+}
+}
 
 // function to obtain correct amount of characters
 // function queryPwdLength() {
-    if (pwdLength >= 8 && pwdLength <= 128) {
-        console.log(pwdLength,
-        confirmLC());
-    } else if (isNaN(pwdLength)){
-        console.log("Silly Goose, That's Not a Number")
-    } else if (pwdLength == null){
-        console.log ("I can't read your mind...yet.  Please input a number between 8 and 128")
-    } else if (pwdLength < 8){
-        console.log ("While it would be easier to memorize that many characters, your password needs to be at least 8 characters long")
-    } else if (pwdLength > 128){
-        console.log ("Whoa there! I applaud your ambition, but let's be a little sensible and keep our password length to 128 characters or less")
-    } else { (console.log ("Huh.  I didn't expect that.  Try again."))}
-    
+if (pwdLength >= 8 && pwdLength <= 128) {
+    console.log(pwdLength)
+    confirmLC();
+} else if (isNaN(pwdLength)) {
+    console.log("Silly Goose, That's Not a Number")
+} else if (pwdLength == null) {
+    console.log("I can't read your mind...yet.  Please input a number between 8 and 128")
+} else if (pwdLength < 8) {
+    console.log("While it would be easier to memorize that many characters, your password needs to be at least 8 characters long")
+} else if (pwdLength > 128) {
+    console.log("Whoa there! I applaud your ambition, but let's be a little sensible and keep our password length to 128 characters or less")
+} else { (console.log("Huh.  I didn't expect that.  Try again.")) }
+
 // }
 
