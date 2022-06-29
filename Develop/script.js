@@ -2,10 +2,8 @@
 var generateBtn = document.querySelector("#generate");
 var password 
 function generatePassword () {
-  genPassword()
-}
-function genPassword() {
-//Arrays needed for password generation characters
+
+    //Arrays needed for password generation characters
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 var specialChar = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '{', '}', '[', ']', '|', '/', ':', ';', "'", '"', '<', '>', ',', '.', '?']
@@ -26,8 +24,6 @@ function lottery(arr, num) {
 }
 //select the desired amount out of the array//
 const arr = totalCharacters
-
-
 
 
 //function to confirm special characters
@@ -133,5 +129,22 @@ function writePassword() {
 
 }
 
+function clipboard(){
+    var copyText = document.querySelector("passwordText.value");
+      copyText.select();
+     /* For mobile devices */
+      copyText.setSelectionRange(0, 99999); 
+  
+     /* Copy the text inside the text field */
+    navigator.clipboard.writeText(copyText.value);
+  
+    /* Alert the copied text */
+    alert("Copied the text: " + copyText.value);
+  
+  }
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+//Added a copy to clipboard button
+copyBtn.addEventListener("click", clipboard);
